@@ -14,7 +14,7 @@ function renderTable() {
         body.innerHTML = '<tr><td colspan="3" class="text-center py-5 text-muted">No questions found. Click "Add New" to start!</td></tr>';
         return;
     }
-
+    // question
     questions.forEach(q => {
         const correctText = q.options[q.correctIndex] || 'N/A';
         body.innerHTML += `
