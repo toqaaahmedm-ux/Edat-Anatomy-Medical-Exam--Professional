@@ -1,0 +1,72 @@
+:root {
+    --primary: #0062ff;
+    --bg: #f8fafc;
+}
+
+body {
+    background: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+
+
+.main-card {
+    max-width: 650px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+
+.opt-btn {
+    width: 100%;
+    text-align: left;
+    padding: 15px 25px;
+    margin-bottom: 10px;
+    border: 2px solid #f1f5f9;
+    background: #fff;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.opt-btn:hover {
+    border-color: var(--primary);
+    background: #f0f7ff;
+}
+
+.opt-btn.active {
+    background: var(--primary) !important;
+    color: white !important;
+}
+
+
+.timer-ring {
+    width: 70px;
+    height: 70px;
+    border: 5px solid #f1f5f9;
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.hidden { display: none !important; }
+
+/* (Manage Page) */ 
+.table-wrapper { background: #fff; padding: 20px; border-radius: 15px; margin-top: 30px; }
+.table-title { background: #435d7d; color: #fff; padding: 15px; border-radius: 10px 10px 0 0; }
+.material-icons { cursor: pointer; font-size: 22px; 
+}
