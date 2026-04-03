@@ -32,39 +32,37 @@
 </head>
 
 <body>
+
+    <!-- A hidden input to store the ID during the edit process." comment toqaa -->
     <div class="form-card">
-        <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-3">
-            <h4 id="page-title" class="fw-bold text-primary m-0">Add New Question</h4>
-            <a href="index.html" class="btn btn-sm btn-outline-secondary">Back to Table</a>
-        </div>
-
+        <h4 class="fw-bold text-primary mb-4">Add New Question</h4>
         <form id="admin-form">
-            <!-- A hidden input to store the ID during the edit process." comment toqaa -->
-            <input type="hidden" id="edit-id">
-
+            <!-- نص السؤال -->
             <div class="mb-3">
                 <label class="form-label small fw-bold">Question Text</label>
-                <textarea id="q-text" class="form-control" rows="3" placeholder="Enter question..." required></textarea>
+                <textarea id="q-text" class="form-control" rows="3" required></textarea>
             </div>
 
+            <!-- الاختيارات -->
             <div class="mb-3">
                 <label class="form-label small fw-bold">Options</label>
                 <div class="row g-2">
-                    <div class="col-6"><input type="text" id="opt0" class="form-control opt" placeholder="Option A"
+                    <div class="col-6"><input type="text" id="opt0" class="form-control" placeholder="Option A"
                             required></div>
-                    <div class="col-6"><input type="text" id="opt1" class="form-control opt" placeholder="Option B"
+                    <div class="col-6"><input type="text" id="opt1" class="form-control" placeholder="Option B"
                             required></div>
-                    <div class="col-6"><input type="text" id="opt2" class="form-control opt" placeholder="Option C"
+                    <div class="col-6"><input type="text" id="opt2" class="form-control" placeholder="Option C"
                             required></div>
-                    <div class="col-6"><input type="text" id="opt3" class="form-control opt" placeholder="Option D"
+                    <div class="col-6"><input type="text" id="opt3" class="form-control" placeholder="Option D"
                             required></div>
                 </div>
             </div>
 
+            <!-- الإجابة الصحيحة -->
             <div class="mb-4">
                 <label class="form-label small fw-bold text-success">Correct Answer</label>
-                <select id="correct-idx" class="form-select border-success-subtle" required>
-                    <option value="" disabled selected>Mark the correct one...</option>
+                <select id="correct-idx" class="form-select" required>
+                    <option value="" disabled selected>Select correct...</option>
                     <option value="0">Option A</option>
                     <option value="1">Option B</option>
                     <option value="2">Option C</option>
@@ -72,12 +70,8 @@
                 </select>
             </div>
 
-            <button type="submit" id="submit-btn" class="btn btn-primary w-100 py-3 rounded-pill fw-bold shadow-sm">Save
-                Question 💾</button>
+            <button type="submit" class="btn btn-primary w-100 py-3 rounded-pill fw-bold">Save Question 💾</button>
         </form>
     </div>
-
-
 </body>
-
-</html>
+    </html>

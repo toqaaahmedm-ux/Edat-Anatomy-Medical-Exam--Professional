@@ -7,7 +7,7 @@
     <!-- <title>Manage Question Bank</title> -->
     <!-- 1. رابط الأيقونات الكامل (لإظهار علامة الزائد وسلة المهملات) -->
     <!-- <link rel="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" href="stylesheet"> -->
-     
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- 2. رابط التنسيق الكامل (لضبط شكل الجداول والأزرار) -->
@@ -17,18 +17,20 @@
     <!-- 3. رابط الخط الاحترافي (اختياري لجعل الخط مثل الصورة تماماً) -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style-p-admin.css">
-
+    <link rel="stylesheet" href="css/style-p-maneg.css">
     <script src="js/quiz-logic.js"></script>
     <script src="js/Mange-logic.js"></script>
 </head>
 
-<body style="background: #f4f7f6; display: block; padding-top: 50px;">
-    <div class="container">
+<body style="background: #f4f7f6; display: block;">
+    <div class="container-full">
         <div class="table-wrapper shadow bg-white p-4 rounded-4">
             <div class="table-title d-flex justify-content-between align-items-center mb-4 p-3 rounded-3 text-white"
                 style="background: #435d7d;">
                 <h2 class="m-0 text-white">Manage <b>Questions</b></h2>
                 <div>
+
+
                     <a href="admin.html" class="btn btn-success fw-bold px-4 rounded-pill">Add New</a>
                     <a href="quiz.html" class="btn btn-light fw-bold px-4 rounded-pill ms-2">View Quiz</a>
                 </div>
@@ -37,7 +39,7 @@
             <table class="table table-striped table-hover align-middle">
                 <thead>
                     <tr>
-                        <th style="width: 55%;">Question</th>
+                        <th style="width: 70%;">Question</th>
                         <th>Correct Answer</th>
                         <th class="text-center">Actions</th>
                     </tr>
@@ -49,7 +51,4 @@
             <div class="text-muted mt-3">Total Questions: <b id="total-count">0</b></div>
         </div>
     </div>
-
 </body>
-
-</html>

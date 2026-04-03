@@ -1,42 +1,56 @@
-let questions = JSON.parse(localStorage.getItem('medical_db')) || [];
-const urlParams = new URLSearchParams(window.location.search);
-const editId = urlParams.get('edit');
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('admin-form');
+    
+    form.onsubmit = function(e) {
+        e.preventDefault();
 
-// ID (Edit Mode)
-if (editId) {
-    const q = questions.find(item => item.id == editId);
-    if (q) {
-        document.getElementById('edit-id').value = q.id;
-        document.getElementById('q-text').value = q.question;
-        q.options.forEach((val, i) => document.getElementById(`opt${i}`).value = val);
-        document.getElementById('correct-idx').value = q.correctIndex;
+        const getVal = (id) => {
+            const el = document.getElementById(id);
+            if (!el) {
+                alert("⚠️ ناقص عندك في الـ HTML عنصر بالـ ID ده: " + id);
+                return null;
+            }
+            return el.value.trim();
+        };
 
-        document.getElementById('page-title').innerText = "Update Question";
-        document.getElementById('submit-btn').innerText = "Update Now ✅";
-        document.getElementById('submit-btn').className = "btn btn-info w-100 py-3 rounded-pill fw-bold text-white shadow-sm";
-    }
-}
+        const idVal = document.getElementById('edit-id')?.value || "";
+        const qText = getVal('q-text');
+        const opt0 = getVal('opt0');
+        const opt1 = getVal('opt1');
+        const opt2 = getVal('opt2');
+        const opt3 = getVal('opt3');
+        const correctIdx = getVal('correct-idx');
 
-document.getElementById('admin-form').onsubmit = (e) => {
-    e.preventDefault();
-    const idVal = document.getElementById('edit-id').value;
+        //    تمام كدة يا حافظ   لو في أي حاجة ناقصة ، الكود هيقف هنا ويطلع رسالة بالاسم الناقص
+        if (qText === null || opt0 === null || opt1 === null || opt2 === null || opt3 === null || correctIdx === null) return;
 
-    // date
-    const qData = {
-        id: idVal ? parseInt(idVal) : Date.now(),
-        question: document.getElementById('q-text').value.trim(),
-        options: Array.from(document.querySelectorAll('.opt')).map(i => i.value.trim()),
-        correctIndex: parseInt(document.getElementById('correct-idx').value)
+        
+        let questions = JSON.parse(localStorage.getItem('medical_db')) || [];
+        const opts = [opt0, opt1, opt2, opt3];
+
+        //  منع تكرار الإجابات يا م/حافظ (مشكلة Humerus)
+        if (new Set(opts.map(o => o.toLowerCase())).size < 4) {
+            alert("⚠️ خطأ: لا يمكن تكرار الإجابات!");
+            return;
+        }
+
+        const qData = {
+            id: idVal ? parseInt(idVal) : Date.now(),
+            question: qText,
+            options: opts,
+            correctIndex: parseInt(correctIdx)
+        };
+
+        if (idVal) {
+            questions = questions.map(q => q.id == idVal ? qData : q);
+        } else {
+            questions.push(qData);
+        }
+
+        localStorage.setItem('medical_db', JSON.stringify(questions));
+       alert("Question saved successfully! ✅");
+
+        window.location.href = "index.html"; 
+
     };
-
-    if (idVal) {
-        // up date question
-        questions = questions.map(q => q.id == idVal ? qData : q);
-    } else {
-        //add new question
-        questions.push(qData);
-    }
-
-    localStorage.setItem('medical_db', JSON.stringify(questions));
-    window.location.href = "manage.html";
-};
+});

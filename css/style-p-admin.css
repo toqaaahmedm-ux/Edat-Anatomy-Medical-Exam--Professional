@@ -5,13 +5,13 @@
        justify-content: center;
    }
 
+    .form-card {
+        max-width: 600px; 
+        margin: 50px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
 
-
-   .form-card {
-       max-width: 550px;
-       width: 100%;
-       background: #fff;
-       padding: 30px;
-       border-radius: 20px;
-       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-   }
+   

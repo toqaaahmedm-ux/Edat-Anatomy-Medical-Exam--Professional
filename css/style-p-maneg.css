@@ -1,0 +1,10 @@
+    .container-full {
+        width: 96%;
+        margin: 0 auto;
+        padding-top: 30px;
+    }
+
+    .table-wrapper {
+        width: 100%;
+        min-height: 80vh;
+    }
